@@ -111,3 +111,5 @@ for (player in players) {
 player_stats <- player_stats |>
   mutate(explosiveness = (rushYard + recYard)/(rushAtt + recR),
          possession = recR/recTarget)
+
+write.csv(player_stats,"DCGFFL_Player_Stats.csv", row.names=F)
