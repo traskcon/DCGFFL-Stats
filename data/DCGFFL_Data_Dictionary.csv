@@ -1,0 +1,35 @@
+field,type,description
+gameId,int,
+playId,int,
+playDescription,str,
+half,int,
+down,int,
+yardsToGo,int,
+possessionTeam,str,
+defensiveTeam,str,
+yardline_100,int,
+gameClock,str,
+preSnapTeam1Score,int,
+preSnapTeam2Score,int,
+offenseFormation,str,
+receiverAlignment,str,
+playType,str,
+timeToThrow,float,
+yardsGained,int,
+passCoverage,str,
+manZone,str,
+receiver,str,Name of the targeted receiver
+rusher,str,Name of the ballcarrier
+tackler,str,Name of player who pulled the ballcarrier's flags; left empty if ballcarrier ran out of bounds or scored
+reception,bool,Whether or not pass was complete
+passRush1,str,Pass rusher name; if there are multiple pass rushers this is the one lined up over the center
+blocker1,str,Name of blocker who engages passRush1; typically the center
+pressure1,float,"Whether or not passRush1 got pressure on the QB; possible values are 0 (no pressure), 0.5 (pressure after 3 seconds/due to QB scramble/QB unaffected), or 1 (pressure within 3 seconds)"
+passRush2,str,Secondary pass rusher name
+blocker2,str,Name of blocker who engages passRush2; typically the cone
+pressure2,float,Whether or not passRush2 got pressure on the QB
+passRush3,str,Tertiary pass rusher name
+blocker3,str,Name of blocker who engages passRush3; empty if free rush
+pressure3,float,Whether or not passRush3 got pressure on the QB
+teamPressure,float,Whether or not team got pressure on the QB; max of individual passRush fields
+videoTimestamp,str,MM:SS timestamp of when the play begins in the game footage
