@@ -15,7 +15,7 @@ set.coltypes <- function(df,types) {
 
 # 1. Read Data and Generate Stats ----------------------------------------------
 
-pbp_data <- read_csv("DCGFFL_Plays.csv")
+pbp_data <- read_csv(file.path(getwd(), "data/DCGFFL_Plays.csv"))
 
 stat_list <- c("passer","receiver","rusher","tackler","passRush1","blocker1",
                "passRush2","blocker2","passRush3","blocker3")
@@ -40,7 +40,8 @@ player_stats <- set.coltypes(player_stats, stat_types)
 for (player in players) {
   # Filter data down to plays specific player was involved in
   player_data <- pbp_data |>
-    filter(if_any(all_of(stat_list), ~ . == player))
+    filter(if_any(all_of(stat_list), ~ . == player)|
+             grepl(player,playDescription, fixed=T))
   # Extract player stats from player plays
   pGames <- length(unique(player_data$gameId))
   # Passing Stats
